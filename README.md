@@ -39,6 +39,7 @@ You can find the documentation of the collection under the [docs/](docs/) direct
 - **[08-file-scanner/](docs/08-file-scanner/)** file-scanner antivirus service
 - **[09-conversations/](docs/09-conversations/)** conversations app, workers
 - **[10-calendars/](docs/10-calendars/)** calendars app, CalDAV server, workers
+- **[11-contacts/](docs/11-contacts/)** contacts app, workers
 - **[monitoring.md](docs/monitoring.md)** cAdvisor + Grafana Alloy
 - **[backup.md](docs/backup.md)** Restic backup
 - **[troubleshooting.md](docs/troubleshooting.md)** common issues and debug commands
@@ -60,6 +61,7 @@ You can find the documentation of the collection under the [docs/](docs/) direct
 | file_scanner | file-scanner antivirus service | [REFERENCE.md](roles/file_scanner/REFERENCE.md) |
 | conversations | Conversations application | [REFERENCE.md](roles/conversations/REFERENCE.md) |
 | calendars | Calendars application | [REFERENCE.md](roles/calendars/REFERENCE.md) |
+| contacts | Contacts application | [REFERENCE.md](roles/contacts/REFERENCE.md) |
 | alloy | Grafana Alloy telemetry | [REFERENCE.md](roles/alloy/REFERENCE.md) |
 | restic | Restic backup | [REFERENCE.md](roles/restic/REFERENCE.md) |
 
