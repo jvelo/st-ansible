@@ -129,6 +129,8 @@ CONTACTS_FRONTEND_BACKEND_SERVER=contacts-backend:8000
 | `DJANGO_ADMIN_URL` | `admin` | Django admin path, without slashes. Set the same value in the backend env. |
 | `DJANGO_ADMIN_IP_ALLOWLIST` | `0.0.0.0/0 ::/0` | Space-separated CIDR list of client IPs allowed on the admin URL. Caddy answers 403 to the others. |
 | `CONTACTS_FRONTEND_TRUSTED_PROXIES` | _(empty)_ | Space-separated CIDR list of upstream proxies whose `X-Forwarded-For` sets the client IP. Empty: the TCP peer is the client. |
+| `CONTACTS_FRONTEND_CSP_SCRIPT_SRC` | _(empty)_ | Space-separated list of extra origins that can serve scripts (`script-src` of the Content-Security-Policy). Empty: only the app's own origin. |
+| `CONTACTS_FRONTEND_CSP_CONNECT_SRC` | _(empty)_ | Space-separated list of extra origins that the app can call (`connect-src`). Empty: only the app's own origin. |
 
 Follow these rules:
 
@@ -138,6 +140,10 @@ Follow these rules:
   request. Remove the line to allow all.
 - Behind a load balancer, set `CONTACTS_FRONTEND_TRUSTED_PROXIES` to its range. When you do not,
   Caddy uses the load balancer IP as the client IP.
+- If the backend env turns on the app launcher (`FRONTEND_LAGAUFRE_ENABLED`) or the feedback
+  widget (`FRONTEND_FEEDBACK_MESSAGES_WIDGET_ENABLED`), add the origin of the widget script to
+  `CONTACTS_FRONTEND_CSP_SCRIPT_SRC` and the origin of its API to
+  `CONTACTS_FRONTEND_CSP_CONNECT_SRC`. When an origin is missing, the browser blocks the widget.
 
 ## Data & Volumes
 

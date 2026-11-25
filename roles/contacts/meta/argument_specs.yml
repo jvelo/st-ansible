@@ -61,7 +61,8 @@ argument_specs:
         description: >-
           Content of the default frontend_env_template, not used if st_contacts_frontend_env_template is defined.
           The frontend is a Caddy server. Set CONTACTS_FRONTEND_BACKEND_SERVER=contacts-backend:8000.
-          The other keys are optional: DJANGO_ADMIN_URL, DJANGO_ADMIN_IP_ALLOWLIST and CONTACTS_FRONTEND_TRUSTED_PROXIES.
+          The other keys are optional: DJANGO_ADMIN_URL, DJANGO_ADMIN_IP_ALLOWLIST, CONTACTS_FRONTEND_TRUSTED_PROXIES,
+          CONTACTS_FRONTEND_CSP_SCRIPT_SRC and CONTACTS_FRONTEND_CSP_CONNECT_SRC.
         default: ""
       st_contacts_backend_env_template:
         type: "str"
