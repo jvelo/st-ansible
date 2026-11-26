@@ -112,7 +112,9 @@ LOGOUT_REDIRECT_URL=https://contacts.example.org
 To let the other apps of the Suite call the external API (`/external_api/v1.0/`) with the
 access token of their user, also set `OIDC_RESOURCE_SERVER_ENABLED=True`,
 `OIDC_OP_INTROSPECTION_ENDPOINT`, `OIDC_RS_CLIENT_ID`, `OIDC_RS_CLIENT_SECRET` and
-`OIDC_RS_ALLOWED_AUDIENCES`. See the upstream
+`OIDC_RS_ALLOWED_AUDIENCES`. With `OIDC_RS_CREATE_USER=True`, the first call of a user who
+never logged in to Contacts creates this user. Then the token of the other app must give
+`email` and the organization claim at the userinfo endpoint. See the upstream
 [resource server guide](https://github.com/suitenumerique/contacts/blob/main/docs/resource_server.md).
 
 ## Frontend Environment
